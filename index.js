@@ -1,13 +1,3 @@
-// let board=[ [5,3,0,0,7,0,0,0,0],
-//             [6,0,0,1,9,5,0,0,0],
-//             [0,9,8,0,0,0,0,6,0],
-//             [8,0,0,0,6,0,0,0,3],
-//             [4,0,0,8,0,3,0,0,1],
-//             [7,0,0,0,2,0,0,0,6],
-//             [0,6,0,0,0,0,2,8,0],
-//             [0,0,0,4,1,9,0,0,5],
-//             [0,0,0,0,8,0,0,7,9]];
-
 let board=[ [0,0,0,0,0,0,0,0,0],
 [0,0,0,0,0,0,0,0,0],
 [0,0,0,0,0,0,0,0,0],
@@ -83,9 +73,6 @@ board[row][col]=0;
 }
 return false;
 }
-// solveSudoku(board);
-// console.log(board);
-
 
 const board_=document.getElementById('board');
 
@@ -97,11 +84,6 @@ for(let r=0;r<9;r++){
 for(let c=0;c<9;c++){
 var cell=document.createElement('input');
 cell.id=`${r}-${c}`;
-// if(board[r][c]!==0){
-//     cell.value=board[r][c];
-//     cell.classList.add("cell-start");
-//     cell.disabled=true;
-// }
 if(r==2 || r==5){
 cell.classList.add("horizontal");
 }
@@ -121,6 +103,7 @@ solveSudoku(board);
 console.log(board);
 fillBoard(board);
 }
+
 function fillBoard(board){
 for(let i=0;i<9;i++){
 for(let j=0;j<9;j++){
@@ -133,6 +116,7 @@ cell.value=board[i][j];
 }
 }
 }
+
 var tempboard;
 function reset(){
 console.log("reset");
@@ -159,14 +143,12 @@ if(cell.value===""){
 }
 else if(board[i][j]===0 && isValid(board,i,j,val)){
 console.log(cell.value);
-// console.log(i,j);
 board[i][j]=cell.value;
 cell.classList.remove('incorrect');
 cell.classList.add('correct');
 }
 else if(board[i][j]===0){
 console.log(i,j);
-// console.log(cell.value);
 cell.classList.remove('correct');
 cell.classList.add('incorrect');
 flag=false;
@@ -182,7 +164,6 @@ else{
 res.innerHTML="You lost! Better luck next time";
 res.style.color="red";
 }
-
 }
 
 function shuffle(){
